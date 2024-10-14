@@ -21,13 +21,54 @@ public class ex2 {
         }
         return min;
     }
+
+    //c)
+
+    public static int maxSum(int[] numbers) {
+        int min = minValue(numbers);
+        int sum = 0;
+        boolean minRemoved = false;
+
+        for (int number : numbers) {
+            if (number == min && !minRemoved) {
+                minRemoved = true;
+            } else {
+                sum += number;
+            }
+        }
+        return sum;
+    }
+
+    //d))
+    public static int minSum(int[] numbers) {
+        int max = maxValue(numbers);
+        int sum = 0;
+        boolean maxRemoved = false;
+
+        for (int number : numbers) {
+            if (number == max && !maxRemoved) {
+                maxRemoved = true;
+            } else {
+                sum += number;
+            }
+        }
+        return sum;
+    }
+
+
     public static void main(String[] args) {
-        int[] numbers = {4, 8, 3, 10, 17,3, 88};
+        int[] numbers = {8, 2 ,33 ,84 ,109, 6};
 
         int max = maxValue(numbers);
         System.out.println("Max Value is: " + max);
 
         int min = minValue(numbers);
         System.out.println("Min Value is: " + min);
+
+        int minSum = minSum(numbers);
+        System.out.println("Min Sum is: " + minSum);
+
+        int maxSum = maxSum(numbers);
+        System.out.println("Max Sum is: " + maxSum);
     }
 }
