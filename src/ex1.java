@@ -31,6 +31,20 @@ public class ex1 {
         List<Integer> failingGrades = failedGrades(grades);
 
         System.out.println("Failed grades: " + failingGrades);
+
+        double average=calculateAverage(grades);
+        System.out.println("Average grade: " + average);
+    }
+//b)
+    public static double calculateAverage(int[] grades) {
+        if (grades.length == 0) {
+            return 0;
+        }
+        int sum = 0;
+        for (int grade : grades) {
+            sum += grade;
+        }
+        return (double) sum/grades.length;
     }
 
 
