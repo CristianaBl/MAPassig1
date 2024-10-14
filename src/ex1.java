@@ -25,11 +25,16 @@ public class ex1 {
         double average=ex1.calculateAverage(grades);
         System.out.println("Average grade: " + average);
 
-        int[] rndGrades=ex1.getRoundedGrades(grades);
+        int[] rndGrades=getRoundedGrades(grades);
         System.out.print("Rounded Grades: ");
         for (int grade : rndGrades) {
             System.out.print(grade+" ");
         }
+        System.out.println();
+        int bstGrade=getBestGrade(grades);
+        System.out.print("Best Grade: " + bstGrade);
+
+
 
     }
 //b)
@@ -60,6 +65,20 @@ public class ex1 {
             roundedGrades[i] = roundGrade(grades[i]);
         }
         return roundedGrades;
+    }
+
+//d)
+
+    public static int getBestGrade(int[] grades) {
+        int maxGrade=0;
+        for (int grade:grades) {
+            int roundedGrade = roundGrade(grade);
+            if (roundedGrade > maxGrade) {
+                maxGrade = roundedGrade;
+            }
+        }
+
+        return maxGrade;
     }
 }
 
