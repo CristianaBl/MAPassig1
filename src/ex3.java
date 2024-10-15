@@ -29,12 +29,27 @@ public class ex3 {
         return longToArray(sum);
     }
 
+    //b)
+
+    public static int[] subtract(int[] num1, int[] num2) {
+        long number1 = arrayToLong(num1);
+        long number2 = arrayToLong(num2);
+        long difference = number1 - number2;
+
+        return longToArray(difference);
+    }
+
     public static void main(String[] args) {
         int[] num1 = {1, 3, 0, 0, 0, 0, 0, 0, 0};
         int[] num2 = {8, 7, 0, 0, 0, 0, 0, 0, 0};
 
         int[] sum = add(num1, num2);
         System.out.println("add:"+Arrays.toString(sum));
+
+        int[] diff=subtract(num2, num1);
+        System.out.println("subtract:"+Arrays.toString(diff));
+
+
 
     }
 }
