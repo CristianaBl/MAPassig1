@@ -38,17 +38,34 @@ public class ex4 {
         }
         return maxAffordable;
     }
+//d)
+
+    public static int budgetSpending(int budget, int[] keyboards, int[] usbDrives) {
+        int maxSpent = -1;
+
+        for (int keyboardPrice : keyboards) {
+            for (int usbPrice : usbDrives) {
+                int total = keyboardPrice + usbPrice;
+                if (total <= budget && total > maxSpent) {
+                    maxSpent = total;
+                }
+            }
+        }
+        return maxSpent;
+    }
+
 
     public static void main(String[] args) {
-        int[] keyboards = new int[]{40, 35, 70, 15, 45};
+        int[] keyboards = new int[]{40, 50, 60};
         System.out.println("the Cheapest Keyboard is: "+cheapestKeyboard(keyboards));
 
-        int[] usbDrives = new int[]{80,70, 12, 8};
+        int[] usbDrives = new int[]{8, 12};
         System.out.println("most epensive item is: "+mostExpensiveItem(usbDrives, keyboards));
 
-        int budget= 71;
+        int budget= 60;
         System.out.println("USB within budget: "+ withinBudget(usbDrives, budget));
 
+        System.out.println("has Spent.. " + budgetSpending(budget, keyboards, usbDrives));
 
 
     }
