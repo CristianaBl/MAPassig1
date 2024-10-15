@@ -39,6 +39,23 @@ public class ex3 {
         return longToArray(difference);
     }
 
+    //c)
+
+    public static int[] multiply(int[] num, int digit) {
+        long number = arrayToLong(num);
+        long product = number * digit;
+
+        return longToArray(product);
+    }
+
+    //d)
+    public static int[] divide(int[] num, int digit) {
+        long number = arrayToLong(num);
+        long quotient = number /digit ;
+
+        return longToArray(quotient);
+    }
+
     public static void main(String[] args) {
         int[] num1 = {1, 3, 0, 0, 0, 0, 0, 0, 0};
         int[] num2 = {8, 7, 0, 0, 0, 0, 0, 0, 0};
@@ -49,7 +66,12 @@ public class ex3 {
         int[] diff=subtract(num2, num1);
         System.out.println("subtract:"+Arrays.toString(diff));
 
+        int digit=2;
+        int[] multiply=multiply(num1,digit);
+        System.out.println("multiply:"+Arrays.toString(multiply));
 
+        int[] divide=divide(num1,digit);
+        System.out.println("divide:"+Arrays.toString(divide));
 
     }
 }
